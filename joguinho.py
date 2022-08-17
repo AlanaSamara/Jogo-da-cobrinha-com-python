@@ -11,7 +11,7 @@ y_maca = 0
 verde = (0,255,0)
 cinza = (150,150,150)
 vermelho = (255,0,0)
-maca_eaten = True
+maca_comida = True
 walk = "right"
 pontos=0
 
@@ -59,18 +59,18 @@ while janela_aberta:
 
     # pontuação para quando se comer a maça
     if x == x_maca and y == y_maca:
-        maca_eaten = True
+        maca_comida = True
         pontos+=1
         texto = font.render("pontos: "+str(pontos), True, (0,0,0),(211,211,211))
    
    # gerar uma nova coordenada para a maça
-    if maca_eaten == True:
+    if maca_comida == True:
 
         # máx 20 blocos eixo x, 15 blocos eixo y
         x_maca = randint(0,19)*40
         y_maca = randint(0,14)*40
 
-        maca_eaten = False
+        maca_comida = False
     
     pygame.draw.rect(janela, verde, (x, y, 40, 40))
     pygame.draw.rect(janela, vermelho, (x_maca, y_maca, 40, 40))
